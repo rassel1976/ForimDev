@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+
+{% block post %}
+    <h1>{{ Post.post_name }}</h1>
+
+    {{ Post.post_text }}
+    <a href="/forum/">Главная</a>
+
+{% for comment in comments %}
+    <p>{{ comment.comment_text }} {{ comment.comment_name }}</p>
+{% endfor %}
+    {% if request.user.is_authenticated %}
+        <form action="/forum/{{ Post.id }}/addcomment/" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="button" value="Добавить комментарий">
+        </form>
+    {% else %}
+        <p>Вы не вошли</p>
+    {% endif %}
+{% endblock %}
