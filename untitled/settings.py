@@ -121,5 +121,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/static/media/'
+STATIC_ROOT = 'C:/Users/Nik/PycharmProjects/untitled/static/'
+MEDIA_ROOT = 'C:/Users/Nik/PycharmProjects/untitled/static/media/'
 
 APPEND_SLASH=False
