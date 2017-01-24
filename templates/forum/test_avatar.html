@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+{% block post %}
+    {% load staticfiles %}
+    {% if request.user.is_authenticated %}
+            {{ avatar.avatar_av.url }}
+            <img src="{{ avatar.avatar_av.url }}" height="200" width="200">
+        <form action="/forum/avatar/add/" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="button" value="Add avatar">
+        </form>
+    {% else %}
+        Вы не вошли.
+    {% endif %}
+{% endblock %}
