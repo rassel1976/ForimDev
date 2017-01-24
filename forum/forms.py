@@ -1,7 +1,7 @@
 from django.forms import ModelForm
 from django import forms
 
-from forum.models import Comment, Post
+from forum.models import Comment, Post, Avatar
 
 
 class CommentForm(ModelForm):
